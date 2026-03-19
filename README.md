@@ -1,16 +1,21 @@
 .Installation:
 
-mkdir blog-api
-cd blog-api
-npm init -y
+ mkdir blog-api
+ 
+ cd blog-api
+ 
+ npm init -y
 
 
 .Commandes npm:
 
-npm init -y
-npm install express sqlite3 body-parser cors swagger-ui-express swagger-jsdoc
-npm install nodemon --save-dev
-npm install mongoose
+ npm init -y
+
+ npm install express sqlite3 body-parser cors swagger-ui-express swagger-jsdoc
+
+ npm install nodemon --save-dev
+
+ npm install mongoose
 
 .Liste des endpoints :
 
