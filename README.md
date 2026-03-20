@@ -19,6 +19,9 @@
 
 .Liste des endpoints :
 
+
+  POUR LANCER LE SERVER IL FAUT TAPER LA COMMENDE "npm run dev"
+
   POST /api/articles: Pour creer un article  http://localhost:3000/api/articles
                         Body JSON :
 
