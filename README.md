@@ -1,10 +1,13 @@
 .Installation:
 
- mkdir blog-api
+Cette API a ete concus a l'aide de Node.js , de l'editeur visualStudio code et du langage  javascrip.
+Pour effectuer des test de bon fonctionnement Postman est utiliser
+
+ mkdir blog-api (Creation de mon dossier de travail)
  
  cd blog-api
  
- npm init -y
+ npm init -y(Initialiser mon package.Json)
 
 
 .Commandes npm:
