@@ -3,29 +3,29 @@
 Cette API a ete concus a l'aide de Node.js , de l'editeur visualStudio code et du langage  javascrip.
 Pour effectuer des test de bon fonctionnement Postman est utiliser
 
- mkdir blog-api (Creation de mon dossier de travail)
+  mkdir blog-api (Creation de mon dossier de travail)
  
- cd blog-api
+  cd blog-api
  
- npm init -y(Initialiser mon package.Json)
+  npm init -y(Initialiser mon package.Json)
 
 
-.Commandes npm:
+.Commandes npm ET intalation de mes depenances:
 
- npm init -y
+   npm init -y
 
- npm install express sqlite3 body-parser cors swagger-ui-express swagger-jsdoc
+   npm install express sqlite3 body-parser cors swagger-ui-express swagger-jsdoc
 
- npm install nodemon --save-dev
+   npm install nodemon --save-dev
 
- npm install mongoose
+   npm install mongoose
 
 .Liste des endpoints :
 
 
-  POUR LANCER LE SERVER IL FAUT TAPER LA COMMENDE "npm run dev"
+   POUR LANCER LE SERVER IL FAUT TAPER LA COMMENDE "npm run dev"
 
-  POST /api/articles: Pour creer un article  http://localhost:3000/api/articles
+   POST /api/articles: Pour creer un article  http://localhost:3000/api/articles
                         Body JSON :
 
                {
