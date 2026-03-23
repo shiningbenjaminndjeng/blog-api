@@ -1,7 +1,9 @@
 .Installation:
 
 Cette API a ete concus a l'aide de Node.js , de l'editeur visualStudio code et du langage  javascrip.
-Pour effectuer des test de bon fonctionnement Postman est utiliser
+Pour effectuer des test de bon fonctionnement Postman est utiliser.
+
+Pour la effectuer des test sur Swagger UI , il faut ouvir ce lien dans votre navigateur http://localhost:3000/api-docs
 
   mkdir blog-api (Creation de mon dossier de travail)
  
