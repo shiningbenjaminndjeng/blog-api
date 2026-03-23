@@ -3,6 +3,22 @@ const router = express.Router();
 const db = require('../database');
 
 // CREATE
+/**
+ * @swagger
+ * /api/articles/{id}:
+ *   get:
+ *     summary: Récupérer un article par ID
+ *     tags: [Articles]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *     responses:
+ *       200:
+ *         description: Article trouvé
+ */
 router.post('/', (req, res) => {
     const { title, content, author, date, category, tags } = req.body;
 
@@ -19,6 +35,16 @@ router.post('/', (req, res) => {
 });
 
 // READ ALL + FILTER
+/**
+ * @swagger
+ * /api/articles:
+ *   get:
+ *     summary: Récupérer tous les articles
+ *     tags: [Articles]
+ *     responses:
+ *       200:
+ *         description: Liste des articles
+ */
 router.get('/', (req, res) => {
     let query = "SELECT * FROM articles WHERE 1=1";
     let params = [];
@@ -45,6 +71,22 @@ router.get('/', (req, res) => {
 });
 
 // READ ONE
+/**
+ * @swagger
+ * /api/articles/{id}:
+ *   get:
+ *     summary: Récupérer un article par ID
+ *     tags: [Articles]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *     responses:
+ *       200:
+ *         description: Article trouvé
+ */
 router.get('/:id', (req, res) => {
     db.get("SELECT * FROM articles WHERE id = ?", [req.params.id], (err, row) => {
         if (err) return res.status(500).json(err);
@@ -53,6 +95,28 @@ router.get('/:id', (req, res) => {
 });
 
 // UPDATE
+/**
+ * @swagger
+ * /api/articles/{id}:
+ *   put:
+ *     summary: Modifier un article
+ *     tags: [Articles]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *     responses:
+ *       200:
+ *         description: Article mis à jour
+ */
 router.put('/:id', (req, res) => {
     const { title, content, category, tags } = req.body;
 
@@ -67,6 +131,22 @@ router.put('/:id', (req, res) => {
 });
 
 // DELETE
+/**
+ * @swagger
+ * /api/articles/{id}:
+ *   delete:
+ *     summary: Supprimer un article
+ *     tags: [Articles]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *     responses:
+ *       200:
+ *         description: Article supprimé
+ */
 router.delete('/:id', (req, res) => {
     db.run("DELETE FROM articles WHERE id = ?", [req.params.id], function (err) {
         if (err) return res.status(500).json(err);
@@ -75,6 +155,21 @@ router.delete('/:id', (req, res) => {
 });
 
 // SEARCH
+/**
+ * @swagger
+ * /api/articles/search:
+ *   get:
+ *     summary: Rechercher un article
+ *     tags: [Articles]
+ *     parameters:
+ *       - in: query
+ *         name: query
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Résultats de recherche
+ */
 router.get('/search', (req, res) => {
     const q = `%${req.query.query}%`;
 
